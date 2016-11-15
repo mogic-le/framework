@@ -224,7 +224,7 @@ class Builder
         }
 
         return $this->model->newInstance()->setConnection(
-            $this->query->getConnection()->getName()
+            $this->model->getConnectionName()
         );
     }
 
@@ -241,7 +241,7 @@ class Builder
         }
 
         return $this->model->newInstance($attributes)->setConnection(
-            $this->query->getConnection()->getName()
+            $this->model->getConnectionName()
         );
     }
 
@@ -259,7 +259,7 @@ class Builder
         }
 
         $instance = $this->model->newInstance($attributes + $values)->setConnection(
-            $this->query->getConnection()->getName()
+            $this->model->getConnectionName()
         );
 
         $instance->save();
